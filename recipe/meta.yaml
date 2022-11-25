@@ -1,5 +1,5 @@
 {% set name = "ensaio" %}
-{% set version = "0.4.0" %}
+{% set version = "0.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ensaio-{{ version }}.tar.gz
-  sha256: 00e9982cdae355262640832268c4967b88fe7d0c699ae97611e15fdcb5fb8082
+  sha256: 29085eb60e28b17f151f833207cc87c59a39e863ed4c074dbb760e405fa43404
 
 build:
   number: 0
