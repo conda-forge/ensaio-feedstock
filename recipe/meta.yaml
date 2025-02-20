@@ -6,20 +6,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ensaio-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ensaio-{{ version }}.tar.gz
   sha256: 5a2da344b5bfe99ffaaa4f418526daeb1e0f3055e2b527696eba6e4ccb30ec23
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
+    - setuptools >=45
+    - setuptools_scm >=6.2
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - pooch >=1.5.0,<2.0.0
 
 test:
@@ -30,6 +32,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/fatiando/ensaio
