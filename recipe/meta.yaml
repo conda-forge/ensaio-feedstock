@@ -10,16 +10,18 @@ source:
   sha256: 8c22bcabae92fbb86851b31c2c64280f27a9ae34c839c4f2cd75c5ef39739560
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
+    - setuptools >=45
+    - setuptools_scm >=6.2
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - pooch >=1.5.0,<2.0.0
 
 test:
@@ -30,6 +32,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/fatiando/ensaio
