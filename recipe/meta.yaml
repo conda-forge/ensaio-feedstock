@@ -1,5 +1,5 @@
 {% set name = "ensaio" %}
-{% set version = "0.7.0" %}
+{% set version = "0.7.1" %}
 {% set python_min = "3.9" %}
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ensaio-{{ version }}.tar.gz
-  sha256: 8c22bcabae92fbb86851b31c2c64280f27a9ae34c839c4f2cd75c5ef39739560
+  sha256: 93ddaf030ba51798c02f61338093d2f589cd3f229827c8ff6c0d663f3722acfa
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
